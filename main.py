@@ -22,4 +22,12 @@ flight_2 = Flight(
 flight_data.add_flight(flight_1)
 flight_data.add_flight(flight_2)
 
-flight_data.show_all_flights()
+search_number = input("Enter a flight number: ")
+
+found_flight = flight_data.find_flight(search_number)
+
+if found_flight:
+    print("\n Flight found:")
+    print(found_flight)
+else:
+    print("\nFlight not found")

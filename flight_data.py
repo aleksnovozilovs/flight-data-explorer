@@ -22,16 +22,9 @@ class FlightData:
         search_results = [] 
         for flight in self.flights:
             flight_value = getattr(flight, field)
-            if flight_value.casefold() == value.casefold():
+            if value.casefold() in flight_value.casefold():
                 search_results.append(flight)
         return search_results
-
-    def find_airline(self, airline):
-        search_result = []
-        for flight in self.flights:
-            if flight.airline.casefold() == airline.casefold():
-                search_result.append(flight)
-        return search_result
 
     def load_csv(self):
         with open("sample_flights.csv") as file:

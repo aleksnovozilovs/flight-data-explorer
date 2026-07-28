@@ -16,7 +16,15 @@ class FlightData:
         for flight in self.flights:
             if flight.flight_number.casefold() == flight_number.casefold():
                 return flight
-        return None    
+        return None   
+    
+    def search(self, field, value):
+        search_results = [] 
+        for flight in self.flights:
+            flight_value = getattr(flight, field)
+            if flight_value.casefold() == value.casefold():
+                search_results.append(flight)
+        return search_results
 
     def find_airline(self, airline):
         search_result = []

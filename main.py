@@ -3,9 +3,9 @@ from flight_data import FlightData
 flight_data = FlightData()
 flight_data.load_csv()
 
-search_airline = input("Enter an Airline: ")
+search_airport = input("Enter an Airport: ")
 
-found_airline = flight_data.find_airline(search_airline)
+found_airline = flight_data.search("origin", search_airport)
 
 if found_airline:
     print ("\nFlights Found:")

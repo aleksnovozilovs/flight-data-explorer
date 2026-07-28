@@ -18,6 +18,13 @@ class FlightData:
                 return flight
         return None    
 
+    def find_airline(self, airline):
+        search_result = []
+        for flight in self.flights:
+            if flight.airline.casefold() == airline.casefold():
+                search_result.append(flight)
+        return search_result
+
     def load_csv(self):
         with open("sample_flights.csv") as file:
             reader = csv.reader(file)
@@ -31,3 +38,4 @@ class FlightData:
                     int(row[4])
                 )
                 self.add_flight(flight)
+

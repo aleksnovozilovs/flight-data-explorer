@@ -1,3 +1,4 @@
+import csv
 from flight import Flight
 
 class FlightData:
@@ -16,3 +17,17 @@ class FlightData:
             if flight.flight_number.casefold() == flight_number.casefold():
                 return flight
         return None    
+
+    def load_csv(self):
+        with open("sample_flights.csv") as file:
+            reader = csv.reader(file)
+            next(reader)
+            for row in reader:
+                flight = Flight(
+                    row[0],
+                    row[1],
+                    row[2],
+                    row[3],
+                    int(row[4])
+                )
+                self.add_flight(flight)

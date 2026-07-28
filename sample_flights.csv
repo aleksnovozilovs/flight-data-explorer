@@ -1,0 +1,6 @@
+flight_number,airline,origin,destination,altitude
+BA117,British Airways,London Heathrow LHR,New York JFK,36000
+EK2,Emirates,London Heathrow LHR,Dubai DXB,38000
+FR244,Ryanair,London Stansted STN,Dublin DUB,35000
+LH901,Lufthansa,London Heathrow LHR,Frankfurt FRA,37000
+KL1008,KLM,Amsterdam AMS,London Heathrow LHR,34000
